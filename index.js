@@ -75,6 +75,37 @@ class StyleCSS{
         return this;
     }
 
+    w(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.width = value + unit;
+        })
+        return this;
+    }
+
+    h(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.height = value + unit;
+        })
+        return this;
+    }
+
+    clr(value){
+        this.elem.forEach(el => {
+            el.style.color = value;
+        })
+        return this;
+    }
+
+
+    trns(property, value, unit = ''){
+        this.elem.forEach(el => {
+            el.style.transform = `${property}(${value}${unit})`;
+        })
+        return this;
+    }
+
+
+
     bgc(color){
         this.elem.forEach(el => {
             el.style.backgroundColor = color;
@@ -87,4 +118,4 @@ function css(userSelector){
     return new StyleCSS(userSelector);
 }
 
-css('p').mb(20).bgc('skyblue');
+
