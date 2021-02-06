@@ -111,6 +111,20 @@ class StyleCSS{
         return this;
     }
 
+    opacity(value = 1){
+        this.elem.forEach(el => {
+            el.style.opacity = value;
+        })
+        return this;
+    }
+
+    d(value = 'block'){
+        this.elem.forEach(el => {
+            el.style.display = value;
+        })
+        return this;
+    }
+
 
 
     bgc(color){
@@ -125,4 +139,4 @@ function css(userSelector){
     return new StyleCSS(userSelector);
 }
 
-css('p').transition('all', 7).clr('red');
+
