@@ -97,9 +97,16 @@ class StyleCSS{
     }
 
 
-    trns(property, value, unit = ''){
+    transform(property, value, unit = ''){
         this.elem.forEach(el => {
             el.style.transform = `${property}(${value}${unit})`;
+        })
+        return this;
+    }
+
+    transition(property, duration = 0.1, timing = 'ease', delay = 0){
+        this.elem.forEach(el => {
+            el.style.transition = `${property} ${duration}s ${timing} ${delay}s`;
         })
         return this;
     }
@@ -118,4 +125,4 @@ function css(userSelector){
     return new StyleCSS(userSelector);
 }
 
-
+css('p').transition('all', 7).clr('red');
