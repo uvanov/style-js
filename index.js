@@ -40,6 +40,41 @@ class StyleCSS{
         return this;
     }
 
+    pdd(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.padding = value + unit;
+        })
+        return this;
+    }
+
+    pt(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.paddingTop = value + unit;
+        })
+        return this;
+    }
+
+    pr(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.paddingRight = value + unit;
+        })
+        return this;
+    }
+
+    pb(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.paddingBottom = value + unit;
+        })
+        return this;
+    }
+
+    pl(value, unit = this.defaultUnit){
+        this.elem.forEach(el => {
+            el.style.paddingLeft = value + unit;
+        })
+        return this;
+    }
+
     bgc(color){
         this.elem.forEach(el => {
             el.style.backgroundColor = color;
@@ -52,4 +87,4 @@ function css(userSelector){
     return new StyleCSS(userSelector);
 }
 
-css('p').mrg(20).mb(80);
+css('p').mb(20).bgc('skyblue');
